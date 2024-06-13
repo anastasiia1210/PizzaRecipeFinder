@@ -1,0 +1,347 @@
+[
+    {
+        "id": 1,
+        "name": "Capricciosa",
+        "imageUrl": "https://example.com/capricciosa.jpg",
+        "description": "Delicious pizza with tomato sauce, mozzarella cheese, mushrooms, artichokes, ham, and olives.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1.0,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Mozzarella Cheese",
+                "quantity": 200.0,
+                "measure": "grams"
+            },
+            {
+                "id": 3,
+                "name": "Mushrooms",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 4,
+                "name": "Artichokes",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 5,
+                "name": "Ham",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 6,
+                "name": "Olives",
+                "quantity": 50.0,
+                "measure": "grams"
+            },
+            {
+                "id": 7,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Sprinkle mozzarella cheese on top of the sauce.",
+            "Add mushrooms, artichokes, ham, and olives.",
+            "Bake in the preheated oven for 10-15 minutes."
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Diavola",
+        "imageUrl": "https://example.com/diavola.jpg",
+        "description": "Spicy pizza with tomato sauce, mozzarella cheese, and spicy salami.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1.0,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Mozzarella Cheese",
+                "quantity": 200.0,
+                "measure": "grams"
+            },
+            {
+                "id": 3,
+                "name": "Spicy Salami",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 4,
+                "name": "Red Chili Flakes",
+                "quantity": 1.0,
+                "measure": "teaspoons"
+            },
+            {
+                "id": 5,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Sprinkle mozzarella cheese on top of the sauce.",
+            "Add spicy salami and red chili flakes.",
+            "Bake in the preheated oven for 10-15 minutes."
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Margherita",
+        "imageUrl": "https://example.com/margherita.jpg",
+        "description": "Classic Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1.0,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Mozzarella Cheese",
+                "quantity": 200.0,
+                "measure": "grams"
+            },
+            {
+                "id": 3,
+                "name": "Fresh Basil",
+                "quantity": 10.0,
+                "measure": "leaves"
+            },
+            {
+                "id": 4,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Sprinkle mozzarella cheese on top of the sauce.",
+            "Bake in the preheated oven for 10-15 minutes.",
+            "Garnish with fresh basil leaves before serving."
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Marinara",
+        "imageUrl": "https://example.com/marinara.jpg",
+        "description": "Simple and traditional pizza with tomato sauce, garlic, oregano, and olive oil.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1.0,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Garlic",
+                "quantity": 3.0,
+                "measure": "cloves"
+            },
+            {
+                "id": 3,
+                "name": "Oregano",
+                "quantity": 1.0,
+                "measure": "teaspoons"
+            },
+            {
+                "id": 4,
+                "name": "Olive Oil",
+                "quantity": 2.0,
+                "measure": "tablespoons"
+            },
+            {
+                "id": 5,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Mince the garlic and sprinkle over the sauce.",
+            "Sprinkle oregano and drizzle olive oil on top.",
+            "Bake in the preheated oven for 10-15 minutes."
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Multiple",
+        "imageUrl": "https://example.com/multiple.jpg",
+        "description": "Pizza with a variety of toppings including tomato sauce, mozzarella cheese, pepperoni, mushrooms, and bell peppers.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1.0,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Mozzarella Cheese",
+                "quantity": 200.0,
+                "measure": "grams"
+            },
+            {
+                "id": 3,
+                "name": "Pepperoni",
+                "quantity": 50.0,
+                "measure": "grams"
+            },
+            {
+                "id": 4,
+                "name": "Mushrooms",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 5,
+                "name": "Bell Peppers",
+                "quantity": 50.0,
+                "measure": "grams"
+            },
+            {
+                "id": 6,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Sprinkle mozzarella cheese on top of the sauce.",
+            "Add pepperoni, mushrooms, and bell peppers.",
+            "Bake in the preheated oven for 10-15 minutes."
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Ortolana",
+        "imageUrl": "https://example.com/ortolana.jpg",
+        "description": "Vegetarian pizza with tomato sauce, mozzarella cheese, and a variety of grilled vegetables.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1.0,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Mozzarella Cheese",
+                "quantity": 200.0,
+                "measure": "grams"
+            },
+            {
+                "id": 3,
+                "name": "Grilled Zucchini",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 4,
+                "name": "Grilled Eggplant",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 5,
+                "name": "Grilled Bell Peppers",
+                "quantity": 100.0,
+                "measure": "grams"
+            },
+            {
+                "id": 6,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Sprinkle mozzarella cheese on top of the sauce.",
+            "Add grilled zucchini, eggplant, and bell peppers.",
+            "Bake in the preheated oven for 10-15 minutes."
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Quattro Formaggi",
+        "imageUrl": "https://example.com/quattroformaggi.jpg",
+        "description": "A rich and creamy pizza with a blend of four different cheeses.",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "Tomato Sauce",
+                "quantity": 1,
+                "measure": "cup"
+            },
+            {
+                "id": 2,
+                "name": "Mozzarella Cheese",
+                "quantity": 100,
+                "measure": "grams"
+            },
+            {
+                "id": 3,
+                "name": "Parmesan Cheese",
+                "quantity": 50.0,
+                "measure": "grams"
+            },
+            {
+                "id": 4,
+                "name": "Gorgonzola Cheese",
+                "quantity": 50.0,
+                "measure": "grams"
+            },
+            {
+                "id": 5,
+                "name": "Fontina Cheese",
+                "quantity": 50.0,
+                "measure": "grams"
+            },
+            {
+                "id": 6,
+                "name": "Pizza Dough",
+                "quantity": 1.0,
+                "measure": "piece"
+            }
+        ],
+        "steps": [
+            "Preheat your oven to 250°C (482°F).",
+            "Roll out the pizza dough to your desired thickness.",
+            "Spread the tomato sauce evenly over the dough.",
+            "Sprinkle the four cheeses evenly on top of the sauce.",
+            "Bake in the preheated oven for 10-15 minutes."
+        ]
+    }
+]
