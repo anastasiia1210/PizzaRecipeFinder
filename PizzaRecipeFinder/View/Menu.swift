@@ -23,6 +23,7 @@ struct Menu: View {
                     Label("Photo", systemImage: "photo")
                 }
         }
+        .accentColor(Color("Accent"))
     }
 }
 

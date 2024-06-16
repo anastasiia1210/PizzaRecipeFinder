@@ -11,12 +11,13 @@ struct RecipeList: View {
     
     @StateObject var recipeModel = RecipeModel()
     @State private var searchText = ""
+    @State private var showSavedOnly = false
     
     var searchResults: [Recipe] {
         if searchText.isEmpty {
-            return recipeModel.recipes
+            return recipeModel.allRecipes
         } else {
-            return recipeModel.recipes.filter { $0.name.contains(searchText) }
+            return recipeModel.allRecipes.filter { $0.name.contains(searchText) }
         }
     }
     
