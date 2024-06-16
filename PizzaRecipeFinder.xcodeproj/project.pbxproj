@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B27F9C82C1F5F98004CE942 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27F9C72C1F5F98004CE942 /* WarningView.swift */; };
+		3B27F9CA2C1F60FE004CE942 /* RecognitionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27F9C92C1F60FE004CE942 /* RecognitionResult.swift */; };
 		3B303C122C1B7FB6005029C2 /* Recognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B303C112C1B7FB6005029C2 /* Recognizer.swift */; };
+		3B4CF7872C1C8B9D00B6E51C /* RecognizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4CF7862C1C8B9D00B6E51C /* RecognizerView.swift */; };
 		3BA62D2F2C18BE0C00D300D0 /* PizzaRecipeFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA62D2E2C18BE0C00D300D0 /* PizzaRecipeFinderApp.swift */; };
 		3BA62D312C18BE0C00D300D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA62D302C18BE0C00D300D0 /* ContentView.swift */; };
 		3BA62D332C18BE0E00D300D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA62D322C18BE0E00D300D0 /* Assets.xcassets */; };
@@ -23,7 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B27F9C72C1F5F98004CE942 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
+		3B27F9C92C1F60FE004CE942 /* RecognitionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionResult.swift; sourceTree = "<group>"; };
 		3B303C112C1B7FB6005029C2 /* Recognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recognizer.swift; sourceTree = "<group>"; };
+		3B4CF7862C1C8B9D00B6E51C /* RecognizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerView.swift; sourceTree = "<group>"; };
 		3BA62D2B2C18BE0C00D300D0 /* PizzaRecipeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaRecipeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA62D2E2C18BE0C00D300D0 /* PizzaRecipeFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaRecipeFinderApp.swift; sourceTree = "<group>"; };
 		3BA62D302C18BE0C00D300D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 				EA9BC3302C1B05BD0055BF39 /* RecipeCell.swift */,
 				EA9BC3332C1B0B130055BF39 /* RecipeList.swift */,
 				EA9BC3352C1B11260055BF39 /* Menu.swift */,
+				3B4CF7862C1C8B9D00B6E51C /* RecognizerView.swift */,
+				3B27F9C72C1F5F98004CE942 /* WarningView.swift */,
+				3B27F9C92C1F60FE004CE942 /* RecognitionResult.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,11 +211,14 @@
 				EA9BC3362C1B11260055BF39 /* Menu.swift in Sources */,
 				3BA62D312C18BE0C00D300D0 /* ContentView.swift in Sources */,
 				EA9BC3312C1B05BD0055BF39 /* RecipeCell.swift in Sources */,
+				3B27F9C82C1F5F98004CE942 /* WarningView.swift in Sources */,
 				3B303C122C1B7FB6005029C2 /* Recognizer.swift in Sources */,
 				3BA62D2F2C18BE0C00D300D0 /* PizzaRecipeFinderApp.swift in Sources */,
+				3B27F9CA2C1F60FE004CE942 /* RecognitionResult.swift in Sources */,
 				3BA62D3D2C18BE6D00D300D0 /* PizzaClassifier.mlmodel in Sources */,
 				EA9BC3342C1B0B130055BF39 /* RecipeList.swift in Sources */,
 				EA9BC3382C1B13F60055BF39 /* RecipeModel.swift in Sources */,
+				3B4CF7872C1C8B9D00B6E51C /* RecognizerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

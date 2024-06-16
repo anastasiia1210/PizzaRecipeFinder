@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct Menu: View {
+    @State var selectedImage: PhotosPickerItem? = nil
     var body: some View {
         TabView {
             
@@ -16,7 +18,7 @@ struct Menu: View {
                     Label("Recipes", systemImage: "list.bullet")
                 }
             
-            RecipeList()
+            RecognizerView()
                 .tabItem {
                     Label("Photo", systemImage: "photo")
                 }

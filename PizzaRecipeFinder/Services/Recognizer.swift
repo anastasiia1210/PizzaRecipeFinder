@@ -47,8 +47,6 @@ class Recognizer: ObservableObject{
         if let results = request.results as? [VNClassificationObservation], let firstResult = results.first {
             self.confidence = firstResult.confidence
             self.identifier = firstResult.identifier
-            
-            print("Confidence: \(confidence), Identifier: \(identifier)")
         } else {
             print("Nothing")
         }
