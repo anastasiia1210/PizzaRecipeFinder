@@ -2,43 +2,43 @@
     {
         "id": 1,
         "name": "Capricciosa",
-        "imageUrl": "https://example.com/capricciosa.jpg",
+        "imageUrl": "https://www.recipetineats.com/wp-content/uploads/2024/05/Pizza-Capricciosa_8.jpg",
         "description": "Delicious pizza with tomato sauce, mozzarella cheese, mushrooms, artichokes, ham, and olives.",
         "ingredients": [
             {
                 "id": 1,
                 "name": "Tomato Sauce",
-                "quantity": 1.0,
+                "quantity": 1,
                 "measure": "cup"
             },
             {
                 "id": 2,
                 "name": "Mozzarella Cheese",
-                "quantity": 200.0,
+                "quantity": 200,
                 "measure": "grams"
             },
             {
                 "id": 3,
                 "name": "Mushrooms",
-                "quantity": 100.0,
+                "quantity": 100,
                 "measure": "grams"
             },
             {
                 "id": 4,
                 "name": "Artichokes",
-                "quantity": 100.0,
+                "quantity": 100,
                 "measure": "grams"
             },
             {
                 "id": 5,
                 "name": "Ham",
-                "quantity": 100.0,
+                "quantity": 100,
                 "measure": "grams"
             },
             {
                 "id": 6,
                 "name": "Olives",
-                "quantity": 50.0,
+                "quantity": 50,
                 "measure": "grams"
             },
             {
@@ -60,7 +60,7 @@
     {
         "id": 2,
         "name": "Diavola",
-        "imageUrl": "https://example.com/diavola.jpg",
+        "imageUrl": "https://www.frontrangefed.com/wp-content/uploads/2023/11/spicy-diavola-pizza-featured.jpg",
         "description": "Spicy pizza with tomato sauce, mozzarella cheese, and spicy salami.",
         "ingredients": [
             {
@@ -106,7 +106,7 @@
     {
         "id": 3,
         "name": "Margherita",
-        "imageUrl": "https://example.com/margherita.jpg",
+        "imageUrl": "https://uk.ooni.com/cdn/shop/articles/20220211142645-margherita-9920.jpg?crop=center&height=800&v=1660843558&width=800",
         "description": "Classic Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.",
         "ingredients": [
             {
@@ -146,7 +146,7 @@
     {
         "id": 4,
         "name": "Marinara",
-        "imageUrl": "https://example.com/marinara.jpg",
+        "imageUrl": "https://allforpizza.com/wp-content/uploads/2023/03/Pizza-Marinara-1-1000x602.jpg",
         "description": "Simple and traditional pizza with tomato sauce, garlic, oregano, and olive oil.",
         "ingredients": [
             {
@@ -192,7 +192,7 @@
     {
         "id": 5,
         "name": "Multiple",
-        "imageUrl": "https://example.com/multiple.jpg",
+        "imageUrl": "https://s.yimg.com/ny/api/res/1.2/v2ouVU2lUke6.A3VOV3sdg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM1OQ--/https://media.zenfs.com/en/tasting_table_543/32804d45624eb06edcd7eab44be3e503",
         "description": "Pizza with a variety of toppings including tomato sauce, mozzarella cheese, pepperoni, mushrooms, and bell peppers.",
         "ingredients": [
             {
@@ -244,7 +244,7 @@
     {
         "id": 6,
         "name": "Ortolana",
-        "imageUrl": "https://example.com/ortolana.jpg",
+        "imageUrl": "https://www.manusmenu.com/wp-content/uploads/2015/08/1-Pizza-Ortolana-4-1-of-1.jpg",
         "description": "Vegetarian pizza with tomato sauce, mozzarella cheese, and a variety of grilled vegetables.",
         "ingredients": [
             {
@@ -296,7 +296,7 @@
     {
         "id": 7,
         "name": "Quattro Formaggi",
-        "imageUrl": "https://example.com/quattroformaggi.jpg",
+        "imageUrl": "https://images.ctfassets.net/nw5k25xfqsik/4fHVjFojqqZwJbQQhMyU4y/f7f761202332fbc477d0e6306a9e6090/_AFL5245.jpg?w=1024",
         "description": "A rich and creamy pizza with a blend of four different cheeses.",
         "ingredients": [
             {

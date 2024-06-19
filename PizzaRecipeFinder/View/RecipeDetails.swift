@@ -56,7 +56,7 @@ struct RecipeDetails: View {
                     HStack {
                         Text(ingredient.name)
                         Spacer()
-                        Text("\(ingredient.quantity, specifier: "%.2f") \(ingredient.measure)")
+                        Text("\(ingredient.quantity, specifier: "%.1f") \(ingredient.measure)")
                     }
                     .padding(.horizontal)
                 }

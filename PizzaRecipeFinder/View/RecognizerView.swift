@@ -25,7 +25,7 @@ struct RecognizerView: View {
                                         .foregroundColor(.white)
                                         .padding()
                                         .frame(maxWidth: 300)
-                                        .background(Color.orange)
+                                        .background(Color("Accent"))
                                         .cornerRadius(10)
                 }
                 .onChange(of: selectedImage) { newItem in
