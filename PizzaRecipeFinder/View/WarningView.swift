@@ -12,7 +12,7 @@ struct WarningView: View {
                            .padding(.top, 10)
             VStack(alignment: .leading, spacing: 5) {
                             Text("• Capricciosa")
-                                .font(.title3)
+                             .font(.title3)
                             Text("• Diavola")
                                 .font(.title3)
                             Text("• Margherita")
@@ -27,11 +27,12 @@ struct WarningView: View {
                                 .font(.title3)
                             Text("• Quattro Formaggi")
                                 .font(.title3)
-            }
-        }
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+        }.padding(10)
     }
 }
 
 #Preview {
     WarningView()
 }
+
