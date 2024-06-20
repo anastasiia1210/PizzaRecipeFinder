@@ -22,21 +22,24 @@ struct RecipeList: View {
     }
     
     var body: some View {
-        
-        NavigationStack {
-            List(searchResults) { recipe in
-                NavigationLink (value: recipe, label: {
-                    RecipeCell(recipe: recipe)
-                        .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                })
+            NavigationStack{
+                ScrollView{
+                    VStack(spacing: 10){
+                        ForEach(searchResults) { recipe in
+                            NavigationLink(value: recipe) {
+                                RecipeCell(recipe: recipe)
+                                    .frame(maxWidth: .infinity)
+                            }
+                        }
+                    }
+                    .navigationTitle("Pizza")
+                    .navigationDestination(for: Recipe.self) { selectedRecipe in
+                        RecipeDetails(recipe: selectedRecipe)
+                    }
+                }
+                .searchable(text: $searchText)
             }
-            .navigationTitle("Pizza")
-            .navigationDestination(for: Recipe.self) { selectedRecipet in
-                RecipeDetails(recipe: selectedRecipet)
-            }
-        }.searchable(text: $searchText)
-    }
-    
+        }
 }
 
 #Preview {

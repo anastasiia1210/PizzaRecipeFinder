@@ -13,40 +13,37 @@ struct RecipeCell: View {
     
     
     var body: some View {
-        VStack() {
-            
+        VStack(spacing: -15) {
             AsyncImage(url: URL(string: recipe.imageUrl)) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
+                ZStack{
+                    phase
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: 150)
+                        .frame(height: 220)
                         .clipped()
-                        .cornerRadius(10)
-                case .failure:
-                    Image(systemName: "questionmark.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 150)
-                        .foregroundColor(Color.gray)
-                        .padding()
-                @unknown default:
-                    EmptyView()
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .center, endPoint: .bottom))
                 }
-                
+            } placeholder: {
+                ProgressView()
+            }
+            VStack(alignment: .leading){
                 Text(recipe.name)
-     
+                    .font(.system(size: 26, weight: .bold, design: .default))
                 Text(recipe.description)
+                    .lineLimit(2)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-            }
-            
+            }.padding()
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
         }
-        .frame(alignment: .center)
-        .padding()
+        .frame(maxWidth: 350)
+        .frame(height: 300)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 24.0))
+        .shadow(radius: 8)
     }
 }
 
