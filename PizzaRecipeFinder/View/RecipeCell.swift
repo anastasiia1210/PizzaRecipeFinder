@@ -1,16 +1,8 @@
-//
-//  RecipeCell.swift
-//  PizzaRecipeFinder
-//
-//  Created by Svitlana on 13.06.2024.
-//
-
 import SwiftUI
 
 struct RecipeCell: View {
     
     let recipe: Recipe
-    
     
     var body: some View {
         VStack(spacing: -15) {

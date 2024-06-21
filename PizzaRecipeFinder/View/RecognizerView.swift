@@ -38,6 +38,7 @@ struct RecognizerView: View {
                                 if let imageData = try? await newItem?.loadTransferable(type: Data.self) {
                                     recognizer.data = imageData
                                     recognizer.classifier()
+                                    recognizer.multiClassifier()
                                     shouldNavigate = true
                                 }
                             }
