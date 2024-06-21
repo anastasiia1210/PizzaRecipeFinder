@@ -1,27 +1,68 @@
 import SwiftUI
 
 struct RecognitionResult: View {
-    var recognizer: Recognizer
-    var image: UIImage
+    
+    @State var recognizer: Recognizer
+    @State var image: UIImage
+    @StateObject var recipeModel = RecipeModel()
     
     var body: some View {
-        VStack{
-            Image (uiImage: image)
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: 300)
-            
-            Text("Result of recognition: \(recognizer.identifier) - \(String(format: "%.2f", recognizer.confidence*100))%")
-                .font(.title2)
-            
-            VStack(alignment: .leading, spacing: 5){
-                Text("Review the \(recognizer.identifier) recipe")
-                Text("Here is the list of recognized ingredients: Tomatoes, Mozzarella, Fresh basil, Olive oil")
-                Text("Generate your own recipe based on these products")
+        ScrollView{
+            VStack(alignment: .leading, spacing: 10) {
+                
+                Image (uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: .infinity, maxHeight: 300)
+                    .clipped()
+                
+                
+                Text("\(recipeModel.getRecipeById(id: pizzaIDMapping[recognizer.identifier] ?? -1)?.name ?? "Other object") (\(String(format: "%.2f", recognizer.confidence*100))%)")
+                    .foregroundColor(Color("Accent"))
+                    .font(.system(size: 26, weight: .bold, design: .default))
+                
+                if((pizzaIDMapping[recognizer.identifier] ?? -1) != -1){
+                    
+                    Text("Recognized ingredients:\n- Tomatoes\n- Mozzarella\n- Fresh basil\n- Olive oil")
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: {
+                        let recipeID = pizzaIDMapping[recognizer.identifier] ?? -1
+                        let recipe = recipeModel.getRecipeById(id: recipeID)
+                        RecipeDetails(recipe: recipe!)
+                    }) {
+                        Text("Recipe")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color("Accent"))
+                            .cornerRadius(10)
+                    }
+                    
+                    Text("Generate Recipe")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color("Accent"))
+                        .cornerRadius(10)
+                    
+                }else{
+                    
+                    Text("Unfortuntelly, we are unable to find the recipe")
+                    
+                }
             }
+            .frame(maxWidth: .infinity,
+                   maxHeight: .infinity,
+                   alignment: .topLeading)
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .padding()
     }
 }
-
-//#Preview {
-//    RecognitionResult()
-//}
+#Preview {
+    RecognitionResult(recognizer: Recognizer(), image: UIImage(systemName: "questionmark.circle")!)
+}

@@ -15,5 +15,5 @@ let pizzaIDMapping: [String: Int] = [
     "multiple": 5,
     "ortolana": 6,
     "quattro-formaggi": 7,
-    "other": 0
+    "other": -1
 ]

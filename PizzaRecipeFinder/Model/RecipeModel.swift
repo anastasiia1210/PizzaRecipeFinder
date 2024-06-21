@@ -8,16 +8,15 @@
 import Foundation
 
 class RecipeModel : ObservableObject {
-    
-    //@Published var listOfRecipes: [Recipe] = []
-    
+        
     @Published var allRecipes: [Recipe] = []
-//    @Published var savedRecipes: [Recipe] = []
-//    
-//    var path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("savedRecipe.json")
 
     init() {
         self.allRecipes = load("recipe.json")
+    }
+    
+    func getRecipeById(id: Int) -> Recipe? {
+        return allRecipes.filter({$0.id == id}).first
     }
     
     func load<T: Decodable>(_ filename: String) -> T {
