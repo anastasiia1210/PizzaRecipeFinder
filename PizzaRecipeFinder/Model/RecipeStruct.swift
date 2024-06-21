@@ -36,7 +36,7 @@ extension Recipe {
     static let sampleRecipe = Recipe (
         id: 1,
         name: "Pancake",
-        imageUrl: "https://cdn2.thecatapi.com/images/7l3.jpg",
+        imageUrl: "https://www.recipetineats.com/wp-content/uploads/2024/05/Pizza-Capricciosa_8.jpg",
         description: "A simple and delicious pancake recipe that's perfect for breakfast.",
         ingredients: sampleIngredients,
         steps: [

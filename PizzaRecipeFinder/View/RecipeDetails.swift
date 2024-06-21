@@ -14,61 +14,55 @@ struct RecipeDetails: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-    
+                
                 AsyncImage(url: URL(string: recipe.imageUrl)) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
+                    ZStack{
+                        phase
                             .resizable()
-                            .scaledToFit()
-                            .cornerRadius(10)
-                            .frame(maxHeight: .infinity)
-                            .padding()
-                    case .failure:
-                        Image(systemName: "questionmark.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(Color.gray)
-                            .frame(maxHeight: .infinity)
-                            .padding()
-                    @unknown default:
-                        EmptyView()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: .infinity, maxHeight: 300)
+                            .clipped()
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .center, endPoint: .bottom))
                     }
+                } placeholder: {
+                    ProgressView()
                 }
                 
                 Text(recipe.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
                     .padding(.horizontal)
+                    .font(.system(size: 30, weight: .bold, design: .default))
+                    .foregroundColor(Color("Accent"))
                 
                 Text(recipe.description)
                     .font(.body)
                     .padding(.horizontal)
-                
-                Text("Ingredients")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                Divider()
+                    .background(.secondary)
                     .padding(.horizontal)
-                
+                Text("Ingredients")
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .padding(.horizontal)
+                    .foregroundColor(Color("Accent"))
                 ForEach(recipe.ingredients) { ingredient in
                     HStack {
-                        Text(ingredient.name)
-                        Spacer()
                         Text("\(ingredient.quantity, specifier: "%.1f") \(ingredient.measure)")
+                        Text("- \(ingredient.name)")
                     }
                     .padding(.horizontal)
                 }
-                
-                Text("Steps")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                Divider()
+                    .background(.secondary)
                     .padding(.horizontal)
+                Text("Steps")
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .padding(.horizontal)
+                    .foregroundColor(Color("Accent"))
                 
                 ForEach(Array(recipe.steps.enumerated()), id: \.offset) { index, step in
                     HStack(alignment: .top) {
-                        Text("Step \(index + 1).")
+                        Text("\(index + 1).")
                         Text(step)
                     }
                     .padding(.horizontal)

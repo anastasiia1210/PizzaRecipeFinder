@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "pizza.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
