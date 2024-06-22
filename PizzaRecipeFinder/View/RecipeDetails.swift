@@ -24,7 +24,7 @@ struct RecipeDetails: View {
                             .clipped()
                         Rectangle()
                             .foregroundColor(.clear)
-                            .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .center, endPoint: .bottom))
+                            .background(LinearGradient(gradient: Gradient(colors: [.clear, Color("CellBg")]), startPoint: .center, endPoint: .bottom))
                     }
                 } placeholder: {
                     ProgressView()

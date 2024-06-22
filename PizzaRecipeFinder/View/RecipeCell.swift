@@ -15,7 +15,7 @@ struct RecipeCell: View {
                         .clipped()
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .center, endPoint: .bottom))
+                        .background(LinearGradient(gradient: Gradient(colors: [.clear, Color("CellBg")]), startPoint: .center, endPoint: .bottom))
                 }
             } placeholder: {
                 ProgressView()
@@ -33,7 +33,7 @@ struct RecipeCell: View {
         }
         .frame(maxWidth: 375)
         .frame(height: 300)
-        .background(Color.white)
+        .background(Color("CellBg"))
         .clipShape(RoundedRectangle(cornerRadius: 24.0))
         .shadow(radius: 8)
     }
