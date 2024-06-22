@@ -10,8 +10,8 @@ import Foundation
 struct Recipe : Codable, Identifiable, Hashable {
     let id : Int
     let name : String
-    let imageUrl : String
-    let description : String
+    let imageUrl : String?
+    let description : String?
     let ingredients : [Ingredient]
     let steps : [String]
 }

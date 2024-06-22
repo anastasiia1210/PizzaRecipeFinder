@@ -26,6 +26,16 @@
 		EA9BC3382C1B13F60055BF39 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BC3372C1B13F60055BF39 /* RecipeModel.swift */; };
 		EA9BC33A2C1B25480055BF39 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = EA9BC3392C1B25480055BF39 /* recipe.json */; };
 		EABB094F2C257F2700FBFF9C /* PizzaToppingsMultiLabelImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EABB094E2C257F2700FBFF9C /* PizzaToppingsMultiLabelImageClassifier.mlmodel */; };
+		EABB09512C25A80500FBFF9C /* RecipeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB09502C25A80500FBFF9C /* RecipeGenerator.swift */; };
+		EABB09532C25AA1A00FBFF9C /* ProductTypeIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB09522C25AA1A00FBFF9C /* ProductTypeIDs.swift */; };
+		EABB09552C26ADF100FBFF9C /* GeneratedRecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB09542C26ADF100FBFF9C /* GeneratedRecipeDetails.swift */; };
+		EABB095E2C26B41100FBFF9C /* diavola.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EABB09572C26B41100FBFF9C /* diavola.jpeg */; };
+		EABB095F2C26B41100FBFF9C /* capricciosa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABB09582C26B41100FBFF9C /* capricciosa.jpg */; };
+		EABB09602C26B41100FBFF9C /* multiple.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EABB09592C26B41100FBFF9C /* multiple.jpeg */; };
+		EABB09612C26B41100FBFF9C /* marinara.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EABB095A2C26B41100FBFF9C /* marinara.jpeg */; };
+		EABB09622C26B41100FBFF9C /* quattro_formaggi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EABB095B2C26B41100FBFF9C /* quattro_formaggi.jpeg */; };
+		EABB09632C26B41100FBFF9C /* margherita.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EABB095C2C26B41100FBFF9C /* margherita.jpeg */; };
+		EABB09642C26B41100FBFF9C /* ortolana.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EABB095D2C26B41100FBFF9C /* ortolana.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +60,16 @@
 		EA9BC3372C1B13F60055BF39 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		EA9BC3392C1B25480055BF39 /* recipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		EABB094E2C257F2700FBFF9C /* PizzaToppingsMultiLabelImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PizzaToppingsMultiLabelImageClassifier.mlmodel; sourceTree = "<group>"; };
+		EABB09502C25A80500FBFF9C /* RecipeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeGenerator.swift; sourceTree = "<group>"; };
+		EABB09522C25AA1A00FBFF9C /* ProductTypeIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeIDs.swift; sourceTree = "<group>"; };
+		EABB09542C26ADF100FBFF9C /* GeneratedRecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedRecipeDetails.swift; sourceTree = "<group>"; };
+		EABB09572C26B41100FBFF9C /* diavola.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = diavola.jpeg; sourceTree = "<group>"; };
+		EABB09582C26B41100FBFF9C /* capricciosa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = capricciosa.jpg; sourceTree = "<group>"; };
+		EABB09592C26B41100FBFF9C /* multiple.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = multiple.jpeg; sourceTree = "<group>"; };
+		EABB095A2C26B41100FBFF9C /* marinara.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = marinara.jpeg; sourceTree = "<group>"; };
+		EABB095B2C26B41100FBFF9C /* quattro_formaggi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = quattro_formaggi.jpeg; sourceTree = "<group>"; };
+		EABB095C2C26B41100FBFF9C /* margherita.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = margherita.jpeg; sourceTree = "<group>"; };
+		EABB095D2C26B41100FBFF9C /* ortolana.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ortolana.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +144,7 @@
 				3B27F9C72C1F5F98004CE942 /* WarningView.swift */,
 				3B27F9C92C1F60FE004CE942 /* RecognitionResult.swift */,
 				3B785F472C24D95C00673203 /* LaunchScreen.storyboard */,
+				EABB09542C26ADF100FBFF9C /* GeneratedRecipeDetails.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +154,7 @@
 			children = (
 				EA9BC32E2C1AFDDC0055BF39 /* RecipeStruct.swift */,
 				EA9BC3372C1B13F60055BF39 /* RecipeModel.swift */,
+				EABB09502C25A80500FBFF9C /* RecipeGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,10 +162,26 @@
 		EA9BC3322C1B0A990055BF39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EABB09562C26AF8D00FBFF9C /* image */,
 				EA9BC3392C1B25480055BF39 /* recipe.json */,
 				EA6CC32B2C23428200F228A0 /* PizzaTypeIDs.swift */,
+				EABB09522C25AA1A00FBFF9C /* ProductTypeIDs.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EABB09562C26AF8D00FBFF9C /* image */ = {
+			isa = PBXGroup;
+			children = (
+				EABB09582C26B41100FBFF9C /* capricciosa.jpg */,
+				EABB09572C26B41100FBFF9C /* diavola.jpeg */,
+				EABB095C2C26B41100FBFF9C /* margherita.jpeg */,
+				EABB095A2C26B41100FBFF9C /* marinara.jpeg */,
+				EABB09592C26B41100FBFF9C /* multiple.jpeg */,
+				EABB095D2C26B41100FBFF9C /* ortolana.jpeg */,
+				EABB095B2C26B41100FBFF9C /* quattro_formaggi.jpeg */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +246,13 @@
 				3B785F482C24D95C00673203 /* LaunchScreen.storyboard in Resources */,
 				EA9BC33A2C1B25480055BF39 /* recipe.json in Resources */,
 				3BA62D332C18BE0E00D300D0 /* Assets.xcassets in Resources */,
+				EABB09642C26B41100FBFF9C /* ortolana.jpeg in Resources */,
+				EABB09612C26B41100FBFF9C /* marinara.jpeg in Resources */,
+				EABB095E2C26B41100FBFF9C /* diavola.jpeg in Resources */,
+				EABB09602C26B41100FBFF9C /* multiple.jpeg in Resources */,
+				EABB09622C26B41100FBFF9C /* quattro_formaggi.jpeg in Resources */,
+				EABB095F2C26B41100FBFF9C /* capricciosa.jpg in Resources */,
+				EABB09632C26B41100FBFF9C /* margherita.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +278,9 @@
 				EA9BC3342C1B0B130055BF39 /* RecipeList.swift in Sources */,
 				EA9BC3382C1B13F60055BF39 /* RecipeModel.swift in Sources */,
 				3B4CF7872C1C8B9D00B6E51C /* RecognizerView.swift in Sources */,
+				EABB09512C25A80500FBFF9C /* RecipeGenerator.swift in Sources */,
+				EABB09552C26ADF100FBFF9C /* GeneratedRecipeDetails.swift in Sources */,
+				EABB09532C25AA1A00FBFF9C /* ProductTypeIDs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PizzaRecipeFinder/Preview Content\"";
-				DEVELOPMENT_TEAM = 6R5W3V32WC;
+				DEVELOPMENT_TEAM = MDMDWDHQ6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaRecipeFinder/Info.plist;
@@ -402,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PizzaRecipeFinder/Preview Content\"";
-				DEVELOPMENT_TEAM = 6R5W3V32WC;
+				DEVELOPMENT_TEAM = MDMDWDHQ6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaRecipeFinder/Info.plist;

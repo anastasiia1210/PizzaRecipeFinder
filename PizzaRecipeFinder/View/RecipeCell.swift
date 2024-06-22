@@ -6,7 +6,7 @@ struct RecipeCell: View {
     
     var body: some View {
         VStack(spacing: -15) {
-            AsyncImage(url: URL(string: recipe.imageUrl)) { phase in
+            AsyncImage(url: URL(string: recipe.imageUrl ?? "")) { phase in
                 ZStack{
                     phase
                         .resizable()
@@ -23,7 +23,7 @@ struct RecipeCell: View {
             VStack(alignment: .leading){
                 Text(recipe.name)
                     .font(.system(size: 26, weight: .bold, design: .default))
-                Text(recipe.description)
+                Text(recipe.description ?? "")
                     .lineLimit(2)
                     .font(.subheadline)
                     .foregroundColor(.secondary)

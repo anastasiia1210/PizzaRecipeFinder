@@ -24,8 +24,9 @@ struct RecognitionResult: View {
                     if((pizzaIDMapping[recognizer.identifier] ?? -1) != -1){
                         
                         Text("Recognized ingredients:")
-                        ForEach(self.recognizer.ingredients, id: \.self) { ingredient in
-                            Text("· \(ingredient)")
+                            .font(.headline)
+                        ForEach(mapIngridients(ingredients: recognizer.ingredients), id: \.self) { ingredient in
+                            Text("· \(ingredient.name)")
                         }
                     } else{
                         Text("The object has no recipe:)")
@@ -48,20 +49,26 @@ struct RecognitionResult: View {
                             .cornerRadius(10)
                     }
                     
-                    Text("Generate Recipe")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("Accent"))
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("Accent"), lineWidth: 2)
-                        )
                     
-                    
-                }.frame(alignment: .bottom)
+                    NavigationLink(destination: {
+                        let recipe = generateRecipe(ingredients: recognizer.ingredients)
+                        GeneratedRecipeDetails(recipe: recipe)
+                    }){
+                        Text("Generate Recipe")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("Accent"))
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color("Accent"), lineWidth: 2)
+                            )
+                    }
+                }
+                .frame(alignment: .bottom)
+            } else {
+                Text("Unfortuntelly, we are unable to find the recipe")
             }
-            
         }
         .frame(maxWidth: .infinity,
                maxHeight: .infinity,

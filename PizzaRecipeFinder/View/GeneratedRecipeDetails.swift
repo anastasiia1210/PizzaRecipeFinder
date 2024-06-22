@@ -1,43 +1,25 @@
 //
-//  RecipeDetails.swift
+//  GeneratedRecipeDetails.swift
 //  PizzaRecipeFinder
 //
-//  Created by Svitlana on 13.06.2024.
+//  Created by Svitlana on 22.06.2024.
 //
 
 import SwiftUI
 
-struct RecipeDetails: View {
+struct GeneratedRecipeDetails: View {
     
     let recipe: Recipe
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                
-                AsyncImage(url: URL(string: recipe.imageUrl ?? "")) { phase in
-                    ZStack{
-                        phase
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(maxWidth: .infinity, maxHeight: 300)
-                            .clipped()
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .center, endPoint: .bottom))
-                    }
-                } placeholder: {
-                    ProgressView()
-                }
-                
+                                
                 Text(recipe.name)
                     .padding(.horizontal)
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .foregroundColor(Color("Accent"))
                 
-                Text(recipe.description ?? "")
-                    .font(.body)
-                    .padding(.horizontal)
                 Divider()
                     .background(.secondary)
                     .padding(.horizontal)
@@ -73,8 +55,9 @@ struct RecipeDetails: View {
         .navigationTitle(recipe.name)
         .navigationBarTitleDisplayMode(.inline)
     }
-}
+    }
+
 
 #Preview {
-    RecipeDetails(recipe: Recipe.sampleRecipe)
+    GeneratedRecipeDetails(recipe: Recipe.sampleRecipe)
 }
