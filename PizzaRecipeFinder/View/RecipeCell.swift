@@ -2,7 +2,7 @@ import SwiftUI
 
 struct RecipeCell: View {
     
-    let recipe: Recipe
+    var recipe: Recipe
     
     var body: some View {
         VStack(spacing: -15) {
@@ -21,8 +21,19 @@ struct RecipeCell: View {
                 ProgressView()
             }
             VStack(alignment: .leading){
-                Text(recipe.name)
-                    .font(.system(size: 26, weight: .bold, design: .default))
+                HStack{
+                    Text(recipe.name)
+                        .font(.system(size: 26, weight: .bold, design: .default))
+                    Spacer()
+                    Button(action: {
+                       // recipe.isLiked = true
+                          }) {
+                              Image(systemName: "heart")
+                                  .imageScale(.large)
+                              .foregroundColor(Color("Accent"))
+                              .bold()
+                          }
+                }
                 Text(recipe.description ?? "")
                     .lineLimit(2)
                     .font(.subheadline)

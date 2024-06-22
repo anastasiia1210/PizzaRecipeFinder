@@ -29,12 +29,21 @@ struct RecipeDetails: View {
                 } placeholder: {
                     ProgressView()
                 }
-                
-                Text(recipe.name)
-                    .padding(.horizontal)
-                    .font(.system(size: 30, weight: .bold, design: .default))
-                    .foregroundColor(Color("Accent"))
-                
+                HStack{
+                    Text(recipe.name)
+                        .padding(.horizontal)
+                        .font(.system(size: 30, weight: .bold, design: .default))
+                        .foregroundColor(Color("Accent"))
+                    Spacer()
+                    Button(action: {
+                        // recipe.isLiked = true
+                    }) {
+                        Image(systemName: "heart")
+                            .imageScale(.large)
+                            .foregroundColor(Color("Accent"))
+                            .bold()
+                    }.padding(.horizontal)
+                }
                 Text(recipe.description ?? "")
                     .font(.body)
                     .padding(.horizontal)
