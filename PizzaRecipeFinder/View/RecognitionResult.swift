@@ -7,26 +7,33 @@ struct RecognitionResult: View {
     @StateObject var recipeModel = RecipeModel()
     
     var body: some View {
-        ScrollView{
-            VStack(alignment: .leading, spacing: 10) {
-                
-                Image (uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(maxWidth: .infinity, maxHeight: 300)
-                    .clipped()
-                
-                
-                Text("\(recipeModel.getRecipeById(id: pizzaIDMapping[recognizer.identifier] ?? -1)?.name ?? "Other object") (\(String(format: "%.2f", recognizer.confidence*100))%)")
-                    .foregroundColor(Color("Accent"))
-                    .font(.system(size: 26, weight: .bold, design: .default))
-                
-                if((pizzaIDMapping[recognizer.identifier] ?? -1) != -1){
+        VStack{
+            ScrollView{
+                VStack(alignment: .leading) {
                     
-                    Text("Recognized ingredients:\n- Tomatoes\n- Mozzarella\n- Fresh basil\n- Olive oil")
+                    Image (uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity, maxHeight: 300)
+                        .clipped()
                     
-                    Spacer()
+                    Text("\(recipeModel.getRecipeById(id: pizzaIDMapping[recognizer.identifier] ?? -1)?.name ?? "Other object") (\(String(format: "%.2f", recognizer.confidence*100))%)")
+                        .foregroundColor(Color("Accent"))
+                        .font(.system(size: 26, weight: .bold, design: .default))
                     
+                    if((pizzaIDMapping[recognizer.identifier] ?? -1) != -1){
+                        
+                        Text("Recognized ingredients:")
+                        ForEach(self.recognizer.ingredients, id: \.self) { ingredient in
+                            Text("· \(ingredient)")
+                        }
+                    } else{
+                        Text("The object has no recipe:)")
+                    }
+                }
+            }
+            if((pizzaIDMapping[recognizer.identifier] ?? -1) != -1){
+                VStack{
                     NavigationLink(destination: {
                         let recipeID = pizzaIDMapping[recognizer.identifier] ?? -1
                         let recipe = recipeModel.getRecipeById(id: recipeID)
@@ -43,22 +50,22 @@ struct RecognitionResult: View {
                     
                     Text("Generate Recipe")
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("Accent"))
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color("Accent"))
-                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color("Accent"), lineWidth: 2)
+                        )
                     
-                }else{
                     
-                    Text("Unfortuntelly, we are unable to find the recipe")
-                    
-                }
+                }.frame(alignment: .bottom)
             }
-            .frame(maxWidth: .infinity,
-                   maxHeight: .infinity,
-                   alignment: .topLeading)
+            
         }
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity,
+               alignment: .topLeading)
         .navigationBarTitleDisplayMode(.inline)
         .padding()
     }
