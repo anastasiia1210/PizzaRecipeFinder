@@ -5,7 +5,7 @@ import SwiftUI
 
 class Recognizer: ObservableObject{
     
-    @Published var data: Data? = nil
+    @Published var image: UIImage? = nil
     @Published var confidence: Float = 0
     @Published var identifier: String = "ortolana"
     @Published var ingredients: [String] = []
@@ -21,8 +21,7 @@ class Recognizer: ObservableObject{
             request.usesCPUOnly = true
 #endif
             
-            guard let data = data else { return }
-            guard let image = UIImage(data: data) else {return}
+            guard let image = image else {return}
             guard let cgImage = image.cgImage else {return}
             
             let imageRequestHandker = VNImageRequestHandler(cgImage: cgImage)
@@ -39,8 +38,7 @@ class Recognizer: ObservableObject{
             let model = try VNCoreMLModel(for: pizzaModel.model)
             let request = VNCoreMLRequest(model: model, completionHandler: multiHandler)
             
-            guard let data = data else { return }
-            guard let image = UIImage(data: data) else {return}
+            guard let image = image else {return}
             guard let cgImage = image.cgImage else {return}
             
 #if targetEnvironment(simulator)

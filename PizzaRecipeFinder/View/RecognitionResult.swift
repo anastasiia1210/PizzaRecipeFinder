@@ -66,8 +66,6 @@ struct RecognitionResult: View {
                     }
                 }
                 .frame(alignment: .bottom)
-            } else {
-                Text("Unfortuntelly, we are unable to find the recipe")
             }
         }
         .frame(maxWidth: .infinity,

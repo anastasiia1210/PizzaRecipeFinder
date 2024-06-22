@@ -31,7 +31,7 @@ struct RecipeCell: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
         }
-        .frame(maxWidth: 350)
+        .frame(maxWidth: 375)
         .frame(height: 300)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 24.0))

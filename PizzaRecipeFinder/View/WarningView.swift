@@ -3,32 +3,24 @@ import SwiftUI
 struct WarningView: View {
     var body: some View {
         VStack{
-            Text("To recognize a pizza, please press the button located at the bottom of the screen to start the recognition process.")
-                .font(.title2)
-                .fontWeight(.semibold)
+            Text("To recognize a pizza, select one of the available options. If you want to take a photo of the pizza, click Camera, if you want to select an existing photo, click Photo Library.")
+                .font(.title3)
             Text("The app is capable of recognizing the following types of pizzas:")
-                           .font(.title2)
-                           .fontWeight(.semibold)
-                           .padding(.top, 10)
+                .font(.title3)
+                .padding(.top, 10)
             VStack(alignment: .leading, spacing: 5) {
-                            Text("• Capricciosa")
-                             .font(.title3)
-                            Text("• Diavola")
-                                .font(.title3)
-                            Text("• Margherita")
-                                .font(.title3)
-                            Text("• Marinara")
-                                .font(.title3)
-                            Text("• Multiple")
-                                .font(.title3)
-                            Text("• Ortolana")
-                                .font(.title3)
-                            Text("• Other")
-                                .font(.title3)
-                            Text("• Quattro Formaggi")
-                                .font(.title3)
+                Text("• Capricciosa")
+                Text("• Diavola")
+                Text("• Margherita")
+                Text("• Marinara")
+                Text("• Multiple")
+                Text("• Ortolana")
+                Text("• Other")
+                Text("• Quattro Formaggi")
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-        }.padding(10)
+                .padding()
+            Spacer()
+        }
     }
 }
 
