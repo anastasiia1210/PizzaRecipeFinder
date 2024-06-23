@@ -2,39 +2,64 @@ import SwiftUI
 
 struct RecipeList: View {
     
-    @StateObject var recipeModel = RecipeModel()
+    @ObservedObject var recipeModel = RecipeModel.model
     @State private var searchText = ""
     @State private var showSavedOnly = false
     
-    var searchResults: [Recipe] {
+    var filterResults: [Recipe] {
         if searchText.isEmpty {
-            return recipeModel.allRecipes
+            if(showSavedOnly){
+                return recipeModel.allRecipes.filter {$0.isSaved}
+            } else{
+                return recipeModel.allRecipes
+            }
         } else {
-            return recipeModel.allRecipes.filter { $0.name.contains(searchText) }
+            if showSavedOnly {
+                return recipeModel.allRecipes.filter { $0.isSaved && $0.name.contains(searchText) }
+            } else {
+                return recipeModel.allRecipes.filter { $0.name.contains(searchText) }
+            }
         }
     }
     
     var body: some View {
-            NavigationStack{
-                ScrollView{
-                    VStack(spacing: 10){
-                        ForEach(searchResults) { recipe in
-                            NavigationLink(value: recipe) {
-                                RecipeCell(recipe: recipe)
-                                    .frame(maxWidth: .infinity)
-                            }
+        NavigationStack{
+            
+            VStack {
+                HStack {
+                    TextField("Search", text: $searchText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.leading)
+                    Button(action: {
+                        showSavedOnly.toggle()
+                    }) {
+                        Image(systemName: showSavedOnly ? "heart.fill" : "heart")
+                            .foregroundColor(Color("Accent"))
+                            .font(.title)
+                    }
+                    .padding()
+                }
+            }
+            
+            ScrollView{
+                VStack(spacing: 10){
+                    ForEach(filterResults) { recipe in
+                        NavigationLink(value: recipe) {
+                            RecipeCell(recipe: recipe)
+                                .frame(maxWidth: .infinity)
                         }
                     }
-                    .navigationTitle("Pizza")
-                    .navigationDestination(for: Recipe.self) { selectedRecipe in
-                        RecipeDetails(recipe: selectedRecipe)
-                    }
                 }
-                .searchable(text: $searchText)
+                .navigationTitle("Pizza")
+                .navigationDestination(for: Recipe.self) { selectedRecipe in
+                    RecipeDetails(recipe: $recipeModel.allRecipes[recipeModel.allRecipes.firstIndex(where: { $0.id == selectedRecipe.id })!])
+                }
             }
         }
+    }
 }
 
 #Preview {
     RecipeList()
 }
+

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RecipeDetails: View {
     
-    let recipe: Recipe
+    @Binding var recipe: Recipe
+    
+    @ObservedObject var recipeModel = RecipeModel.model
     
     var body: some View {
         ScrollView {
@@ -36,9 +38,9 @@ struct RecipeDetails: View {
                         .foregroundColor(Color("Accent"))
                     Spacer()
                     Button(action: {
-                        // recipe.isLiked = true
+                        recipeModel.saveButtonTap(recipe: recipe)
                     }) {
-                        Image(systemName: "heart")
+                        Image(systemName: recipe.isSaved ? "heart.fill" : "heart")
                             .imageScale(.large)
                             .foregroundColor(Color("Accent"))
                             .bold()
@@ -84,6 +86,6 @@ struct RecipeDetails: View {
     }
 }
 
-#Preview {
-    RecipeDetails(recipe: Recipe.sampleRecipe)
-}
+//#Preview {
+//    RecipeDetails(recipe: Recipe.sampleRecipe)
+//}

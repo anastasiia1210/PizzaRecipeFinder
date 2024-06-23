@@ -4,7 +4,7 @@ struct RecognitionResult: View {
     
     @State var recognizer: Recognizer
     @State var image: UIImage
-    @StateObject var recipeModel = RecipeModel()
+    @ObservedObject var recipeModel = RecipeModel.model
     
     var body: some View {
         VStack{
@@ -35,18 +35,17 @@ struct RecognitionResult: View {
             }
             if((pizzaIDMapping[recognizer.identifier] ?? -1) != -1){
                 VStack{
-                    NavigationLink(destination: {
-                        let recipeID = pizzaIDMapping[recognizer.identifier] ?? -1
-                        let recipe = recipeModel.getRecipeById(id: recipeID)
-                        RecipeDetails(recipe: recipe!)
-                    }) {
-                        Text("Recipe")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color("Accent"))
-                            .cornerRadius(10)
+                    let recipeID = pizzaIDMapping[recognizer.identifier] ?? -1
+                    if let recipeIndex = recipeModel.allRecipes.firstIndex(where: { $0.id == recipeID }) {
+                        NavigationLink(destination: RecipeDetails(recipe: $recipeModel.allRecipes[recipeIndex])) {
+                            Text("Recipe")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("Accent"))
+                                .cornerRadius(10)
+                        }
                     }
                     
                     

@@ -7,7 +7,7 @@ class Recognizer: ObservableObject{
     
     @Published var image: UIImage? = nil
     @Published var confidence: Float = 0
-    @Published var identifier: String = "ortolana"
+    @Published var identifier: String = ""
     @Published var ingredients: [String] = []
     
     func classifier(){

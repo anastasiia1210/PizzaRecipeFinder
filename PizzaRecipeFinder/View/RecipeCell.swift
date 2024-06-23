@@ -4,6 +4,8 @@ struct RecipeCell: View {
     
     var recipe: Recipe
     
+    @ObservedObject var recipeModel = RecipeModel.model
+    
     var body: some View {
         VStack(spacing: -15) {
             AsyncImage(url: URL(string: recipe.imageUrl ?? "")) { phase in
@@ -26,9 +28,9 @@ struct RecipeCell: View {
                         .font(.system(size: 26, weight: .bold, design: .default))
                     Spacer()
                     Button(action: {
-                       // recipe.isLiked = true
+                        recipeModel.saveButtonTap(recipe: recipe)
                           }) {
-                              Image(systemName: "heart")
+                              Image(systemName: recipe.isSaved ? "heart.fill" : "heart")
                                   .imageScale(.large)
                               .foregroundColor(Color("Accent"))
                               .bold()

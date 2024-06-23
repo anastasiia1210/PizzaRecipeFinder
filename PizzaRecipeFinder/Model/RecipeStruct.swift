@@ -7,13 +7,43 @@
 
 import Foundation
 
-struct Recipe : Codable, Identifiable, Hashable {
-    let id : Int
-    let name : String
-    let imageUrl : String?
-    let description : String?
-    let ingredients : [Ingredient]
-    let steps : [String]
+struct Recipe: Codable, Identifiable, Hashable {
+    let id: Int
+    let name: String
+    let imageUrl: String?
+    let description: String?
+    let ingredients: [Ingredient]
+    let steps: [String]
+    var isSaved: Bool
+
+    init(id: Int, name: String, imageUrl: String?, description: String?, ingredients: [Ingredient], steps: [String], isSaved: Bool = false) {
+        self.id = id
+        self.name = name
+        self.imageUrl = imageUrl
+        self.description = description
+        self.ingredients = ingredients
+        self.steps = steps
+        self.isSaved = isSaved
+    }
+    
+    init(from: RecipeFromApi, isSaved: Bool = false){
+        self.id = from.id
+        self.name = from.name
+        self.imageUrl = from.imageUrl
+        self.description = from.description
+        self.ingredients = from.ingredients
+        self.steps = from.steps
+        self.isSaved = isSaved
+    }
+}
+
+struct RecipeFromApi: Codable, Identifiable, Hashable {
+    let id: Int
+    let name: String
+    let imageUrl: String?
+    let description: String?
+    let ingredients: [Ingredient]
+    let steps: [String]
 }
 
 struct Ingredient : Codable, Identifiable, Hashable {
@@ -46,7 +76,8 @@ extension Recipe {
             "Heat a lightly oiled griddle or frying pan over medium-high heat.",
             "Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake.",
             "Brown on both sides and serve hot."
-        ]
+        ],
+        isSaved: true
     )
 }
 
