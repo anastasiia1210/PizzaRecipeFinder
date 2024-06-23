@@ -11,28 +11,38 @@ class RecipeModel : ObservableObject {
     
     @Published var allRecipes: [Recipe] = []
     
-    //@Published var savedRecipes: [Recipe] = []
-    
     static let model = RecipeModel()
     
     var path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("recipedata.json")
     
     init() {
-        print("init")
-        let recipesFromApi: [RecipeFromApi] = load("recipe.json")
-        let savedRecipes = loadSavedRecipeFromFile() ?? []
         
-        var recipes: [Recipe] = []
+        let recipesFromApi: [RecipeFromApi]
         
-        for recipe in recipesFromApi {
-            var newRecipe = Recipe(from: recipe)
-            if savedRecipes.contains(where: { $0.id == newRecipe.id }) {
-                newRecipe.isSaved = true
-            }
-            recipes.append(newRecipe)
+        do {
+            recipesFromApi = try load("recipe.json")
+        } catch {
+            print("Error loading recipes from API: \(error)")
+            recipesFromApi = []
         }
         
-        self.allRecipes = recipes
+        let savedRecipes = loadSavedRecipeFromFile() ?? []
+        
+        if (recipesFromApi.isEmpty){
+            self.allRecipes = savedRecipes
+        } else{
+            var recipes: [Recipe] = []
+            
+            for recipe in recipesFromApi {
+                var newRecipe = Recipe(from: recipe)
+                if savedRecipes.contains(where: { $0.id == newRecipe.id }) {
+                    newRecipe.isSaved = true
+                }
+                recipes.append(newRecipe)
+            }
+            
+            self.allRecipes = recipes
+        }
         
     }
     
@@ -73,25 +83,24 @@ class RecipeModel : ObservableObject {
         return allRecipes.filter({$0.id == id}).first
     }
     
-    func load<T: Decodable>(_ filename: String) -> T {
+    func load<T: Decodable>(_ filename: String) throws -> T {
         let data: Data
         
-        guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-        else {
-            fatalError("Couldn't find \(filename) in main bundle.")
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
+            throw FileError.fileNotFound("Couldn't find \(filename) in main bundle.")
         }
         
         do {
             data = try Data(contentsOf: file)
         } catch {
-            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+            throw FileError.dataLoadFailed("Couldn't load \(filename) from main bundle", error)
         }
         
         do {
             let decoder = JSONDecoder()
             return try decoder.decode(T.self, from: data)
         } catch {
-            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+            throw FileError.dataParsingFailed("Couldn't parse \(filename) as \(T.self)", error)
         }
     }
     
@@ -104,7 +113,6 @@ class RecipeModel : ObservableObject {
     }
     
     private func saveRecipeToSaved(recipe: Recipe){
-        //        if (!savedRecipes.contains { $0.id == recipe.id }) {
         self.allRecipes = self.allRecipes.map { p in
             var temp = p
             if(temp.id == recipe.id){
@@ -112,23 +120,21 @@ class RecipeModel : ObservableObject {
             }
             return temp
         }
-        //            var temp = recipe
-        //            temp.isSaved = true
-        //            self.savedRecipes.append(temp)
-        //}
-}
+    }
     
     private func deleteRecipeFromSaved(recipe: Recipe){
-        //        if (savedRecipes.contains { $0.id == recipe.id }) {
         self.allRecipes = self.allRecipes.map { p in
             var temp = p
             if(temp.id == recipe.id){
                 temp.isSaved = false
             }
             return temp
-            //            }
-            //            self.savedRecipes = self.savedRecipes.filter {$0.id != recipe.id}
-            
         }
     }
+}
+
+enum FileError: Error {
+    case fileNotFound(String)
+    case dataLoadFailed(String, Error)
+    case dataParsingFailed(String, Error)
 }
