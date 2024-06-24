@@ -53,9 +53,9 @@ struct RecognizerView: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(Color("Accent"), lineWidth: 2)
                                 )
-                        }.onChange(of: selectedImage) { newItem in
+                        }.onChange(of: selectedImage) {
                             Task {
-                                if let imageData = try? await newItem?.loadTransferable(type: Data.self) {
+                                if let imageData = try? await selectedImage?.loadTransferable(type: Data.self) {
                                     recognizer.image = UIImage(data: imageData)
                                     recognizer.classifier()
                                     recognizer.multiClassifier()
