@@ -12,8 +12,8 @@ struct PizzaRecipeFinderApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onChange(of: scenePhase) { phase in
-                    switch phase {
+                .onChange(of: scenePhase) {
+                    switch scenePhase {
                     case .background:
                         print("App is background")
                         recipeModel.saveSavedRecipeToFile()
