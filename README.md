@@ -1,4 +1,4 @@
-# Pizza Recipe Finder
+# Pizza Recipe Finder App
 An iOS application that recognizes the type of pizza and its ingredients, and based on this data, generates a recipe and offers a general recipe for this pizza.
 
 Two models were trained to create the app: Image classification and Multi-Label image classification. The first model recognizes what kind of pizza it is, and the second recognizes the ingredients on it.
